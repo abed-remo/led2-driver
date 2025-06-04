@@ -1,4 +1,4 @@
-obj-m += led_driver.o
+obj-m += led2_driver.o
 
 # Wenn KERNEL_SRC nicht gesetzt ist → lokal bauen
 KERNEL_SRC ?= /lib/modules/$(shell uname -r)/build
