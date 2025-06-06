@@ -1,8 +1,10 @@
 obj-m += led2_driver.o
 
-
 all:
-	make -C $(KERNEL_SRC) M=$(PWD) modules
+	$(MAKE) -C $(KERNEL_SRC) M=$(PWD) modules
 
 clean:
-	make -C $(KERNEL_SRC) M=$(PWD) clean
+	$(MAKE) -C $(KERNEL_SRC) M=$(PWD) clean
+
+install:
+	$(MAKE) -C $(KERNEL_SRC) M=$(PWD) modules_install
