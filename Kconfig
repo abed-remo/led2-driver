@@ -1,0 +1,3 @@
+menuconfig LED2_DRIVER
+    tristate "LED2 Character Device Driver"
+    default m
