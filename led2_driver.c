@@ -115,11 +115,12 @@ static int led_probe(struct platform_device *pdev)
     if (ret)
         goto unregister_chrdev;
 
-    led_class = class_create(THIS_MODULE, CLASS_NAME);
-    if (IS_ERR(led_class)) {
-        ret = PTR_ERR(led_class);
-        goto del_cdev;
-    }
+    led_class = class_create(CLASS_NAME);
+if (IS_ERR(led_class)) {
+    ret = PTR_ERR(led_class);
+    goto del_cdev;
+}
+
 
     led_device = device_create(led_class, NULL, dev_num, NULL, DEVICE_NAME);
     if (IS_ERR(led_device)) {
